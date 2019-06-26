@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Hotel Booking System </title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+    <div class="grid-container">
+        
+    <div class="item1">
+  <header> <h1><center>Hotel Booking</center></h1></header>
+</div>
+<div class='item2'>
+
+    <div  class="div1">
+        
+                <fieldset>
+        <legend><b>Personal  Data</b></legend>
+                    <form name="firstpage.html" action="secondpage.html" method="POST">
+                      Name <input type="text" id="name" name="name"   ><br><br>
+                      Email <input type="email" name="Email" id="Email"  ><br><br>
+                      Gender <input  type="radio" id="gender" name="gender">Male
+                             <input  type="radio" id="gender" name="gender">Female<br><br>
+                      Contact <input type="number" id="contact" name="Contact"  ><br><br>
+                      Address <input type="textarea" id="address" name="address">
+                      
+    </fieldset>
+    </div>
+                     <br>
+                     <div  class="div2">
+                    <fieldset>
+                        <legend><b>Booking Details</b></legend>
+                        Date of Booking <input type="date" name="date" min="2019-24-06"><br><br>
+                        Number of  Person <input type="number" name="numberOfGuests" min="1" max="5" required ><br><br>
+                        <p>Do you require meals?</p>
+                        Yes <input type="radio" name="meals" value="YesMeals">
+                        No <input type="radio" name="meals" value="NoMeals">
+                        <br><br>
+                        Balcony <input type="checkbox" name="balcony" value="Yes" checked>
+                        <br><br>
+                       
+                        <br>
+                    </fieldset>
+                     </div>
+                    <div class="div3">
+                    <fieldset>
+                            <legend><b>Room Information</b></legend>
+                            Room Type<select name="roomtype">
+                                    <option value="AC">AC Room</option>
+                                    <option value="Non Ac">Non AC</option>
+                                </select>
+                                <br><br>
+                            Room Number<input type="number" name="roomno" id="roomno" min="100" max="500">
+                            <br><br>
+                            Floor<input type="number" name="floor" id="floor" min="1" max="5">
+                            <br><br>
+                            Amount &#8377; <input type="number" name="amount" id="amount" >
+                            <br><br>
+                            Extra Charges &#8377;<input type="number"  name="ext" id="ext">
+                            <br><br>
+                            Discount &#8240;<input type="percent">
+                            <br><br>
+                            Total<input type="number" name="total" id="total" >
+                            <br><br>
+                            PREPAID AMOUNT <input type="number"  name="amt" id="amt">
+                            <br><br>
+                            REMAIN<input  type="number" name="remain" id="remain">
+                            <br><br>
+                                
+                            </select>
+                            
+                             
+                    </fieldset>
+                     </div>
+                    </div>
+                     
+                <div class="item3"> <footer> <center><input type="submit" style="color:black; background-color: cornsilk; text-align: center;" value="Submit"></center></footer>
+                </div> 
+                    </form>
+              
+         
+     </div>
+</body>
+</html>
