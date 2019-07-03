@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+         #map{
+             height: 500px;
+             width: 100%;
+         }</style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <script>
+        function initMap(){
+        var location={ lat:18.499060 , lng:73.829150};//latitude and longitude to find the exact location for  google map
+        var map = new google.maps.Map(document.getElementById("map"),{
+            zoom: 4,
+            center: location
+        });//where we areactually
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+        }
+        
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuDc-mg4KWL-OO35fxjqMAWwI6YDN6GVg&callback=initMap"></script>
+        <h1> <a href="homepage.html" style="color: black;">Back to Homepage</a></h1>
+    
+    </body>
+</html>
