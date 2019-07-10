@@ -1,18 +1,58 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 body{
-    font-family: 'Montserrat',sans-serif;
-    background-image: url('mountains.jpg');
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*background-image: url('g.jpg');*/
     
 }
 
 .div1{
-    border: 1px solid white;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
+    
+    color: black;
+    font-family: serif;
+    left: 250px;
+    position: absolute;
+    display: block;
 }
 
 div.div1 img{
     margin: 0;
     padding: 0;
     
+}
+
+.b-text_weight-bold{
+    font-weight: 700!important;
+
+}
+h1{
+    text-align: center;
+}
+button{
+   text-align: center;
+}
+
+details{
+    display: block;
+}
+.avail{
+border-radius: 15px 50px;
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%,-50%);
+-moz-transform: translate(-50%,-50%);
+-ms-transform: translate(-50%,-50%);
+-o-transform: translate(-50%,-50%);
+transform: translate(-50%,-50%);
+width: 400px;
+height: 400px;
+padding: 40px;
+background: rgba( 0, 0, 0, 0.5);
+}
+
+.fieldset{
+   
+    padding: 0 0 20px;
+    text-align: center;
+    font-family:serif;
 }

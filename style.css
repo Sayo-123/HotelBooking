@@ -16,55 +16,10 @@ body{
 
   
 
-  /*for  grid*/
-  /*
   
-  .div1{
-    height: 20vh;
-    width: 20vh;
-    grid-area: i1;
-           }
-  .div2{
-    height: 20vh;
-    width:20vh;
-    grid-area: i2;
-       }
-  .div3{
-    height: 20vh;
-    width:20vh;
-    grid-area: i3;
-      }
-  
-.item1 { grid-area: header; }
-.item2 { grid-area: main; }
-.item3 { grid-area: footer; }
 
 
-.grid-container {
-    display: grid;
-    grid-template-areas:
-      'header header header header header header'
-      'main main main main main main'
-      'footer footer footer footer footer footer';
-    grid-gap: 10px;
-    padding: 10px;
-  }
 
-  .grid-container, .grid-container1 > div {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .grid-container1{
-    display: grid;
-    grid-template-areas: 
-    'i1 i1 i2 i2 i3 i3'
-    'i1 i1 i2 i2 i3 i3';
-    padding: 10px;
-  }
-  * {
-    box-sizing: border-box;
-  }
   /*navigation list*/
  /* ul {
     list-style-type: none;
