@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -12,15 +11,11 @@
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
         integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link rel="stylesheet" href="custom.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="..\CSS\custom.css">
+
 </head>
 
 <body>
-    <!--header section if required--  <div class="jumbotron" style="margin-bottom:0px;">
-            <h1>Welcome to  Inspira</h1>
-        </div>-->
-
     <nav class="navbar navbar-expand-md   navbar-dark bg-dark  sticky-top ">
         <button class="navbar-toggler" data-toggle="collapse" data-target="collapse-target">
             <span class="navbar-toggler-icon"></span>
@@ -47,11 +42,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="fifthpage.html">Find Us Here</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="join.html">Join Now</a>
-                </li>
+
                 <li>
                     <a class="nav-link" href="secondpage.html">About Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Admin login</a>
                 </li>
             </ul>
 
@@ -60,44 +58,60 @@
 
     <div id="slider">
         <figure>
-            <img src="luxroom.jpg">
-            <img src="udp.jpg">
-            <img src="rpj.jpg">
-            <img src="Dining.jpg">
-            <img src="gpm.jpg">
+            <img src="..\images\luxroom.jpg">
+            <img src="..\images\udp.jpg">
+            <img src="..\images\rpj.jpg">
+            <img src="..\images\Dining.jpg">
+            <img src="..\images\gpm.jpg">
         </figure>
     </div>
 
     <div class="avail">
         <fieldset>
             <legend>Availability Check</legend>
-            <form action="avail.html">
-                <div class="row">
-                    <div class="col">
-                        <label for="check-in-date">Check-In</label><br><br>
-                        <label for="check-Out-date">Checkout</label><br><br>
-                        <label for="adult">Adult</label><br><br>
-                        <label for="child">Child</label><br><br>
-                    </div>
-                    <div class="col">
-                        <input id="datepicker" class="date"><br>
-                        <script>
-                            $('#datepicker').datepicker({
-                                uiLibrary: 'bootstrap4'
-                            });
-                        </script>
-                        <input id="datepicker1" class="date"><br>
-                        <script>
-                            $('#datepicker1').datepicker({
-                                uiLibrary: 'bootstrap4'
-                            });
-                        </script>
-                        <input type="number" class="number" id="adultno"><br><br>
-                        <input type="number" class="number" id="childno"><br><br>
-                    </div>
-                </div>
+            <form action="avail.php" method="POST">
+                <table>
+                    <tr>
+                        <td><label for="check-in-date">Check-In</label></td>
+                        <td><input id="datepicker" class="date" name="checkin"><br>
+                            <script>
+                                $('#datepicker').datepicker({
+                                    uiLibrary: 'bootstrap4'
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="check-Out-date">Checkout</label></td>
+                        <td> <input id="datepicker1" class="date" name="checkout"><br>
+                            <script>
+                                $('#datepicker1').datepicker({
+                                    uiLibrary: 'bootstrap4'
+                                });
+                            </script>
+                        </td>
+                    </tr>
 
+                    <tr>
+                        <td><label for="adult" style="margin: 5px;">Adult</label></td>
+                        <td><input type="number" class="number" id="adultno" style="margin: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="child" style="margin: 5px;">Child</label></td>
+                        <td><input type="number" class="number" id="childno" style="margin: 5px;"></td>
+                    </tr>
 
+                    <tr>
+
+                        <td><label for="location" id="location">Location</label></td>
+                        <td>
+                            <select name="loc">
+                            <option  value="Pune" id="pune"> Pune &nbsp;
+                            <option  value="Mumbai" id="mumbai"> Mumbai &nbsp;
+                            <option  value="Nagpur" id="nagpur"> Nagpur &nbsp; </select></td>
+
+                    </tr>
+                </table>
                 <center> <button type="submit" class="btn btn-primary">Submit</button> </center>
             </form>
 
