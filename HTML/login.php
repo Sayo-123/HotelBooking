@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -16,6 +17,10 @@
                 <label>Password :</label>
                 <input type="password" id="pass" name="pass" />
             </p>
+            <p>
+                <label>Location :</label>
+                <input type="text" id="loc1" name="location" />
+
             <p>
                 <input type="submit" id="btn" value="Login" name="Login" />
             </p>

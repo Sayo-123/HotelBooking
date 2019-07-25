@@ -1,16 +1,17 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
-        integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
     <link rel="stylesheet" href="..\CSS\custom.css">
 
 </head>
@@ -83,7 +84,8 @@
                     </tr>
                     <tr>
                         <td><label for="check-Out-date">Checkout</label></td>
-                        <td> <input id="datepicker1" class="date" name="checkout"><br>
+                        <td>
+                            <input id="datepicker1" class="date" name="checkout"><br>
                             <script>
                                 $('#datepicker1').datepicker({
                                     uiLibrary: 'bootstrap4'
@@ -93,22 +95,24 @@
                     </tr>
 
                     <tr>
-                        <td><label for="adult" style="margin: 5px;">Adult</label></td>
-                        <td><input type="number" class="number" id="adultno" style="margin: 5px;"></td>
+                        <td><label for="adult" style="margin: 4px;">Adult</label></td>
+                        <td><input type="number" name="adult" class="number" id="adultno" style="margin: 4px;"></td>
                     </tr>
                     <tr>
-                        <td><label for="child" style="margin: 5px;">Child</label></td>
-                        <td><input type="number" class="number" id="childno" style="margin: 5px;"></td>
+                        <td><label for="child" style="margin: 4px;">Child</label></td>
+                        <td><input type="number" name="child" class="number" id="childno" style="margin: 4px;"></td>
                     </tr>
-
+                    <td><label for="email" style="margin: 4px;">E-mail</label></td>
+                    <td><input type="email" name="email" id="email" style="margin: 4px;"></td>
                     <tr>
 
                         <td><label for="location" id="location">Location</label></td>
                         <td>
                             <select name="loc">
-                            <option  value="Pune" id="pune"> Pune &nbsp;
-                            <option  value="Mumbai" id="mumbai"> Mumbai &nbsp;
-                            <option  value="Nagpur" id="nagpur"> Nagpur &nbsp; </select></td>
+                                <option value="1" id="pune"> Pune &nbsp;
+                                <option value="2" id="mumbai"> Mumbai &nbsp;
+                                <option value="3" id="nagpur"> Nagpur &nbsp;
+                            </select></td>
 
                     </tr>
                 </table>

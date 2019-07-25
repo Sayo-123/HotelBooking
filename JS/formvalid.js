@@ -1,47 +1,10 @@
-function change() {
-    document.getElementById('1').innerHTML = "Price: &#8377 5,500";
-    document.getElementById('2').innerHTML = "Price: &#8377 6,500";
-    document.getElementById('3').innerHTML = "Price: &#8377 7,500";
-
-
-}
-
-function changeback() {
-    document.getElementById('1').innerHTML = "Price: &#8377 5,000";
-    document.getElementById('2').innerHTML = "Price: &#8377 6,000";
-    document.getElementById('3').innerHTML = "Price: &#8377 7,000";
-
-}
-
-function change1() {
-    document.getElementById('4').innerHTML = "Price: &#8377 7,500";
-    document.getElementById('5').innerHTML = "Price: &#8377 9,500";
-
-}
-
-function change2() {
-    document.getElementById('4').innerHTML = "Price: &#8377 8,000";
-    document.getElementById('5').innerHTML = "Price: &#8377 10,000";
-
-
-}
-function changeback1() {
-    document.getElementById('4').innerHTML = "Price: &#8377 7,000";
-    document.getElementById('5').innerHTML = "Price: &#8377 9,000";
-
-
-}
-
-function change3() {
-    document.getElementById('6').innerHTML = "Price: &#8377 5,500";
-    document.getElementById('7').innerHTML = "Price: &#8377 10,500";
-}
-
-function changeback2() {
-    document.getElementById('6').innerHTML = "Price: &#8377 5,000";
-    document.getElementById('6').innerHTML = "Price: &#8377 10,000";
-
-}
+$(function () {
+    var $a = $(".tabs li");
+    $a.click(function () {
+        $a.removeClass("active");
+        $(this).addClass("active");
+    });
+});
 
 function showpune() {
     document.getElementById('x').innerHTML = "JS works";
@@ -63,3 +26,48 @@ function shownagpur() {
     document.getElementById('mumbai').style.display = "none";
     document.getElementById('nagpur').style.display = "block";
 }
+
+function getValues() {
+    var a1 = document.getElementById('getprefix').innerText;
+    document.getElementById('a1').defaultValue = a1;
+
+    var a2 = document.getElementById('getfname').innerText;
+    document.getElementById('a2').defaultValue = a2;
+
+    var a3 = document.getElementById('getlname').innerText;
+    document.getElementById('a3').defaultValue = a3;
+
+    var a4 = document.getElementById('getmail').innerText;
+    document.getElementById('a4').defaultValue = a4;
+
+    var a5 = document.getElementById('getphn').innerText;
+    document.getElementById('a5').defaultValue = a5;
+
+    var a6 = document.getElementById('getctn').innerText;
+    document.getElementById('a6').defaultValue = a6;
+
+    var a7 = document.getElementById('getadd').innerText;
+    document.getElementById('a7').defaultValue = a7;
+
+    var a8 = document.getElementById('getcity').innerText;
+    document.getElementById('a8').defaultValue = a8;
+
+    var a9 = document.getElementById('getstate').innerText;
+    document.getElementById('a9').defaultValue = a9;
+
+    var a10 = document.getElementById('getcode').innerText;
+    document.getElementById('a10').defaultValue = a10;
+
+    //showDiv
+
+    if (document.referrer == 'http://localhost/HotelBooking/HTML/booknow.php') {
+        document.getElementById('update').style.display = "none";
+    }
+    else {
+        document.getElementById('update').style.display = "block";
+    }
+
+}
+
+
+

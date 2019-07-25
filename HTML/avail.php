@@ -10,17 +10,40 @@
 </head>
 
 <?php
-if ($_POST["loc"] == 'Pune') {
+if ($_POST["loc"] == '1') {
     echo '<body onload="showpune();">';
 }
 
-if ($_POST["loc"] == 'Mumbai') {
+if ($_POST["loc"] == '2') {
     echo '<body onload="showmumbai();">';
 }
 
-if ($_POST["loc"] == 'Nagpur') {
+if ($_POST["loc"] == '3') {
     echo '<body onload="shownagpur();">';
 }
+
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "hotelbooking";
+$conn = new mysqli($host, $user, $password, $db);
+
+//variables
+
+$checkin = $_POST["checkin"];
+$checkout = $_POST["checkout"];
+$adult = $_POST["adult"];
+$child = $_POST["child"];
+$loc = $_POST["loc"];
+$email = $_POST["email"];
+
+$sql = "INSERT INTO `booking` (`Check_IN`,`Check_OUT`,`Adult`,`Child`,`Loc_ID`,`Email`) VALUES ('$checkin','$checkout','$adult','$child','$loc','$email');";
+if ($conn->query($sql) == TRUE) {
+    echo "Success";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+$conn->close();
 ?>
 
 <h1 style="font-family: serif; font-weight: bold;">Select Hotel</h1>
@@ -30,19 +53,34 @@ if ($_POST["loc"] == 'Nagpur') {
             <li class="nav-item">
                 <label for="check-in-date">Check-In</label>
                 <input type="text" disabled value="<?php echo $_POST["checkin"] ?>" class="date"><br>
-            </li>
+            </li>&nbsp;
 
             <li class="nav-item">
                 <label for="check-Out-date">Checkout</label>
                 <input type="text" disabled value="<?php echo $_POST["checkout"] ?>" class="date"><br>
-            </li>
+            </li>&nbsp;
+            <li class="nav-item">
+                <label for="adult" id="adultno">Adult</label><br>
+                <?php
+                echo $_POST["adult"]; ?>
+            </li>&nbsp;
+            <li class="nav-item">
+                <label for="child" id="childno">Child</label><br>
+                <?php
+                echo $_POST["child"]; ?>
+            </li>&nbsp;
+            <li class="nav-item">
+                <label for="email" id="email">E-mail</label><br>
+                <?php
+                echo $_POST["email"]; ?>
+            </li>&nbsp;
             <li class="nav-item">
                 <label for="location" id="location">Location</label><br>
                 <?php
                 echo $_POST["loc"];
                 ?>
                 <p id="x">js not working</p>
-            </li>
+            </li>&nbsp;
         </ul>
     </nav>
 </div>
@@ -62,7 +100,7 @@ if ($_POST["loc"] == 'Nagpur') {
         <div class="col" style=" font-size: 25px;">
             <b>&#8377 5,000</b>
             <h6>Avg/Night(INR)</h6>
-            <a href="insplace.html"><button type="button" class="btn btn-warning">Select</button></a>
+            <a href="insplace.php"><button type="button" class="btn btn-warning">Select</button></a>
         </div>
     </div>
 
@@ -81,7 +119,7 @@ if ($_POST["loc"] == 'Nagpur') {
         <div class="col" style="font-size: 25px;">
             <b>&#8377 7,000</b>
             <h6>Avg/Night(INR)</h6>
-            <a href="ins.html"><button type="button" class="btn btn-warning">Select</button></a>
+            <a href="ins.php"><button type="button" class="btn btn-warning">Select</button></a>
         </div>
     </div>
 
@@ -104,7 +142,8 @@ if ($_POST["loc"] == 'Nagpur') {
             <h6>Avg/Night(INR)</h6>
             <a href="insr.html"><button type="button" class="btn btn-warning">Select</button></a>
         </div>
-    </div><hr>
+    </div>
+    <hr>
     <a href="homepage.php"><button type="button" id="back" class="btn btn-primary">Back</button></a>
 </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
