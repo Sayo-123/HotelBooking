@@ -11,9 +11,6 @@ $R_info = $_POST["R_info"];
 $Room_Ame = $_POST["Room_Ame"];
 $Room_img = $_POST["Room_img"];
 
-
-
-
 $sql = "INSERT INTO `room` (`Rty_des`,`R_info`,`Room_Ame`,`Room_img`) VALUES ('$Rty_des','$R_info','$Room_Ame','$Room_img')";
 if ($conn->query($sql) == TRUE) {
     echo "Room Inserted Successfully!";
@@ -57,7 +54,7 @@ $sql = "SELECT Pkg_des FROM `package`";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $pkgdes[$k]=$row['Pkg_des'];
+        $pkgdes[$k] = $row['Pkg_des'];
         $price[$k] = $_POST["$pkgdes[$k]"];
         echo $price[$k];
         echo "<br>";
@@ -68,14 +65,12 @@ if ($result->num_rows > 0) {
 }
 //$price[0]=$_POST[''];
 
-$j=0;
-while($j<$result->num_rows) {
-$sql = "INSERT INTO `price1`(`price`, `Pkg_ID`, `Rty_ID`) VALUES ($price[$j],$pkgid[$j],$rtyid)";
-if($conn->query($sql)==TRUE)
-{
-    echo "Success";
-    $j++;
-}
+$j = 0;
+while ($j < $result->num_rows) {
+    $sql = "INSERT INTO `price1`(`price`, `Pkg_ID`, `Rty_ID`) VALUES ($price[$j],$pkgid[$j],$rtyid)";
+    if ($conn->query($sql) == TRUE) {
+        $j++;
+    }
 }
 
 $conn->close();

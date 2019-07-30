@@ -51,26 +51,28 @@
                             <td> <label for="rame">Room-Amenities:</label></td>
                             <td> <input type="text" id="Room_Ame" name="Room_Ame"></td>
                         </tr>
-                        <tr>
-                            <?php
-                            $host = "localhost";
-                            $user = "root";
-                            $password = "";
-                            $db = "hotelbooking";
-                            $conn = new mysqli($host, $user, $password, $db);
 
-                            $sql = "SELECT Pkg_des FROM `package`";
-                            $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    ?>
-                                    <td> <label for="price">Prices:<?php echo $row['Pkg_des']; ?></label></td>
+                        <?php
+                        $host = "localhost";
+                        $user = "root";
+                        $password = "";
+                        $db = "hotelbooking";
+                        $conn = new mysqli($host, $user, $password, $db);
+
+                        $sql = "SELECT Pkg_des FROM `package`";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                ?>
+                                <tr>
+                                    <td> <label for="price">Price for package:&nbsp;<?php echo $row['Pkg_des']; ?></label></td>
                                     <td> <input type="number" id="price" name="<?php echo $row['Pkg_des']; ?>"></td>
-                                <?php
-                                }
+                                </tr>
+                            <?php
                             }
-                            ?>
-                        </tr>
+                        }
+                        ?>
+
 
                         <br>
 
@@ -85,20 +87,30 @@
                 <form method="POST" action="package.php">
                     <table>
                         <tr>
-                            <td> <label for="rtitle">Room Description:</label></td>
-                            <td> <input type="text" id="Rty_des" name="Rty_des"></td>
-                        <tr>
-
-                        <tr>
                             <td> <label for="Pkg_des"> Package Description:</label></td>
                             <td> <input type="text" id="Pkg_des" name="Pkg_des" style="color:black;"></td>
                         </tr>
                         <br>
-                        <tr>
-                            <td> <label for="price" id="price">Price:</label></td>
-                            <td> <input type="number" name="price" style="color:black;"></td>
-                        </tr>
-                        <br>
+                        <?php
+                        $host = "localhost";
+                        $user = "root";
+                        $password = "";
+                        $db = "hotelbooking";
+                        $conn = new mysqli($host, $user, $password, $db);
+
+                        $sql = "SELECT Rty_des FROM `room`";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                ?>
+                                <tr>
+                                    <td> <label for="price">Price for Room Type:&nbsp;<?php echo $row['Rty_des']; ?></label></td>
+                                    <td> <input type="number" id="price" name="<?php echo $row['Rty_des']; ?>"></td>
+                                </tr>
+                            <?php
+                            }
+                        }
+                        ?>
                     </table>
                     <button type="submit" class="btn btn-primary">ADD</button>
                 </form>
