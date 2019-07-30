@@ -13,16 +13,16 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="homepage.php">
-                    <img src="https://img.icons8.com/bubbles/70/000000/home-page.png" data-toggle="tooltip" title="Select another hotel"></a>
+                        <img src="https://img.icons8.com/bubbles/70/000000/home-page.png" data-toggle="tooltip" title="Select another hotel"></a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="Map3.html">
-                     <img src="https://img.icons8.com/bubbles/70/000000/google-maps.png" data-toggle="tooltip" title="Locate us"></a>
+                        <img src="https://img.icons8.com/bubbles/70/000000/google-maps.png" data-toggle="tooltip" title="Locate us"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> 
-                    <img src="https://img.icons8.com/bubbles/70/000000/camera.png" data-toggle="tooltip" title="Images/Events"></a>
+                    <a class="nav-link" href="#">
+                        <img src="https://img.icons8.com/bubbles/70/000000/camera.png" data-toggle="tooltip" title="Images/Events"></a>
                 </li>
             </ul>
         </nav>
@@ -57,7 +57,7 @@
             <div class="col-sm-9">
                 <div class="row">
                     <div class="col">
-                        <img src="..\images\kingbedIns.jpg" width="300" height="200" style="margin: 50px; border:2;">
+                        <img src="..\images\hyatpune.jfif" width="300" height="200" style="margin: 50px; border:2;">
                     </div>
                     <div class="col" style="margin: 50px;">
                         <h4>King Bed</h4>

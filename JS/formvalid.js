@@ -1,27 +1,24 @@
-$(function () {
+$(function() {
     var $a = $(".tabs li");
-    $a.click(function () {
+    $a.click(function() {
         $a.removeClass("active");
         $(this).addClass("active");
     });
 });
 
 function showpune() {
-    document.getElementById('x').innerHTML = "JS works";
     document.getElementById('pune').style.display = 'block';
     document.getElementById('mumbai').style.display = 'none';
     document.getElementById('nagpur').style.display = 'none';
 }
 
 function showmumbai() {
-    document.getElementById('x').innerHTML = "JS works";
     document.getElementById('pune').style.display = "none";
     document.getElementById('mumbai').style.display = "block";
     document.getElementById('nagpur').style.display = "none";
 }
 
 function shownagpur() {
-    document.getElementById('x').innerHTML = "JS works";
     document.getElementById('pune').style.display = "none";
     document.getElementById('mumbai').style.display = "none";
     document.getElementById('nagpur').style.display = "block";
@@ -62,12 +59,8 @@ function getValues() {
 
     if (document.referrer == 'http://localhost/HotelBooking/HTML/booknow.php') {
         document.getElementById('update').style.display = "none";
-    }
-    else {
+    } else {
         document.getElementById('update').style.display = "block";
     }
 
 }
-
-
-

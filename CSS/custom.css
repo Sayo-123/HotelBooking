@@ -105,8 +105,8 @@ body {
 .reser {
     padding: 50px;
     margin: 10px;
-    margin-left: 500px;
-    margin-right: 500px;
+    /*  margin-left: 450px; */
+    margin-right: 115px;
     border-radius: 15px 50px;
     color: black;
     box-shadow: 10px 10px 5px grey;
@@ -169,6 +169,14 @@ td {
 
 * {
     box-sizing: border-box;
+}
+
+.container .tab-content {
+    font-size: 14px;
+    color: #00779c;
+    line-height: 30px;
+    background: #e7ecea;
+    padding: 20px 85px;
 }
 
 .column {

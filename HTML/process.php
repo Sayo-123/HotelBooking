@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -9,15 +12,21 @@ if (isset($_POST['user'])) {
     $uname = $_POST['user'];
     $pass = $_POST['pass'];
 
-    $sql = "select * from login where username='" . $uname . "' AND  password='" . $pass . "' limit 1 ";
-
-    if ($conn->query($sql) == TRUE) {
+    $sql = "select * from login where username='$uname' AND password=DES_ENCRYPT('$pass');";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
         echo "You Have Successfully LoggedIn!";
+        while ($row = $result->fetch_assoc()) {
+            $_SESSION["aid"] = $row["ID"]; //set session var
+
+        }
     } else {
-        echo "You have entered incorrect password!";
+        echo "<script> alert('You have entered incorrect password!');
+        window.top.location.href ='login.php';
+        </script>";
     }
 }
-$conn->close();
+$aid = $_SESSION["aid"];
 
 ?>
 <!DOCTYPE html>
@@ -29,27 +38,46 @@ $conn->close();
 </head>
 
 <body>
-    <div class="tabs">
-        <div class="container-tab">
-            <ul class="nav nav-pills nav-stacked flex-column">
-                <div class="row">
-                    <div class="col">
-                        <li class="active">
-                            <a href="Locations.php" data-toggle="pill">Manage Locations</a></li>
+    <a href="logout.php"><button type="button" class="btn btn-default" style="float:right;">Logout</button>
+        <div class="tabs">
+            <div class="container-tab">
+                <?php
+                $sql = "SELECT Loc_des FROM `login` inner JOIN locations1 WHERE login.Loc_ID=locations1.LocID AND ID=$aid;";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<p style='color:black;'>";
+                        echo "Welcome to location:";
+                        echo $row['Loc_des'];
+                        echo  "</p>";
+                    }
+                } else {
+                    echo "error!";
+                }
+                ?>
+                <ul class="nav nav-pills nav-stacked flex-column">
+                    <div class="row">
+                        <div class="col">
+                            <li class="active">
+                                <a href="Loc_pune.php" data-toggle="pill"></i>Manage Locations</a></li>
+                        </div>
+                        <div class="col">
+                            <li><a href="Customers.php" data-toggle="pill">Manage Customers</a></li>
+                        </div>
+                        <div class="col">
+                            <li><a href="#tab-c" data-toggle="pill">Settings</a></li>
+                        </div>
                     </div>
-                    <div class="col">
-                        <li><a href="Customers.php" data-toggle="pill">Manage Customers</a></li>
-                    </div>
-                    <div class="col">
-                        <li><a href="#tab-c" data-toggle="pill">Settings</a></li>
-                    </div>
-                </div>
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="..\JS\formvalid.js"></script>
+        <?php
+        $conn->close();
+        ?>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="..\JS\formvalid.js"></script>
 
 </body>
 

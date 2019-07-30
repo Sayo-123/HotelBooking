@@ -16,7 +16,7 @@ $id = $_SESSION["id"];  //retrieve session var
     <script src="..\JS\formvalid.js"></script>
 
     <center>
-        <h3>Your Details</h3>
+        <h3><u>Your Details</u></h3>
     </center>
 </head>
 

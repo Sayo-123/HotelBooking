@@ -53,7 +53,6 @@ session_start();
                     <a class="nav-link" href="login.php">Admin login</a>
                 </li>
             </ul>
-
         </div>
     </nav>
 
@@ -113,7 +112,6 @@ session_start();
                                 <option value="2" id="mumbai"> Mumbai &nbsp;
                                 <option value="3" id="nagpur"> Nagpur &nbsp;
                             </select></td>
-
                     </tr>
                 </table>
                 <center> <button type="submit" class="btn btn-primary">Submit</button> </center>

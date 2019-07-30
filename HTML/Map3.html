@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
         }
-
+        
         #map {
             height: 500px;
             width: 100%;
@@ -27,31 +27,32 @@
 
             <script>
                 function initMap() {
-                    var location = { lat: 18.921640, lng: 72.832250 };//latitude and longitude to find the exact location for  google map
+                    var location = {
+                        lat: 18.921640,
+                        lng: 72.832250
+                    }; //latitude and longitude to find the exact location for  google map
                     var map = new google.maps.Map(document.getElementById("map"), {
                         zoom: 15,
                         center: location
-                    });//where we are actually
+                    }); //where we are actually
                     var marker = new google.maps.Marker({
                         position: location,
                         map: map
                     });
                 }
-
             </script>
         </div>
         <div class="col-sm-5">
             <h3>Address: Inspira Mumbai</h3>
             <div>Apollo Bandar, Colaba,</div>
-            <div>  Mumbai, Maharashtra 400001,</div>
+            <div> Mumbai, Maharashtra 400001,</div>
             <div> India</div>
 
         </div>
     </div>
 
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuDc-mg4KWL-OO35fxjqMAWwI6YDN6GVg&callback=initMap"></script>
-    <h1> <a href="ins.html" style="color: black;">Back</a></h1>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuDc-mg4KWL-OO35fxjqMAWwI6YDN6GVg&callback=initMap"></script>
+    <h1> <a href="neew.php" style="color: black;">Back</a></h1>
 
 </body>
 
