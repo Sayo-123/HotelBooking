@@ -1,10 +1,12 @@
 <?php
 session_start();
-$_SESSION['Branch_id']=$_POST['loc'];
+$_SESSION['Branch_id'] = $_POST['loc'];
+$id = $_SESSION['Branch_id'];
 ?>
 
 <!DOCTYPE html>
 <html>
+<!--all contents are dynamically fetch from backend-->
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -16,19 +18,6 @@ $_SESSION['Branch_id']=$_POST['loc'];
 </head>
 
 <?php
-if ($_POST["loc"] == '1') {
-    echo '<body onload="showpune();">';
-
-}
-
-if ($_POST["loc"] == '2') {
-    echo '<body onload="showmumbai();">';
-}
-
-if ($_POST["loc"] == '3') {
-    echo '<body onload="shownagpur();">';
-}
-
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -48,7 +37,6 @@ $sql = "INSERT INTO `booking` (`Check_IN`,`Check_OUT`,`Adult`,`Child`,`Loc_ID`,`
 if ($conn->query($sql) == TRUE) { } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-$conn->close();
 ?>
 
 <h1 style="font-family: serifs; font-weight: bold; text-align:center;" class="text-primary">Select Hotel</h1>
@@ -87,58 +75,50 @@ $conn->close();
 
         <div class="col">
             <div class="div1">
-                <div class="row" id="pune">
-                    <div class="col">
-                        <img src="..\images\hyatplace.jpg" width="240" height="182" border="2">
-                    </div>
-                    <div class="col">
-                        <h3><b>Inspira Place Pune</b></h3>
-                        Rajiv Gandhi Infotech Park, Phase 1
-                        Pune, Maharashtra 411057
-                        India
-                        <div class="b-text_copy-2 b-text_weight-bold">12.5 miles/20.1 km</div>
-                    </div>
-                    <div class="col" style=" font-size: 25px;">
+                <div class="row">
+                    <?php
+                    $sql = "SELECT * FROM `branches` WHERE L_ID=$id;";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            ?>
+                            <div class="col">
+                                <img src="<?php echo $row['Branch_img']; ?>" width="250" height="182"> &emsp;
+                            </div>
+
+                        <?php
+                        }
+                    } else {
+                        echo "Error: " . $sql . "<br>" . $conn->error;
+                    }
+                    ?>
+                </div>
+                <br>
+                <div class="row">
+                    <?php
+                    $sql = "SELECT * FROM `branches` WHERE L_ID=$id;";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            ?>
+                            <div class="col">
+                                <?php echo $row['Branch_add']; ?> &emsp;
+                            </div>
+                        <?php
+                        }
+                    } else {
+                        echo "Error: " . $sql . "<br>" . $conn->error;
+                    }
+                    ?>
+                </div>
+                <br>
+                <div class="row">
+                    <!--   <div class="col">
                         <b>&#8377 5,000</b>
                         <h6>Avg/Night(INR)</h6>
                         <a href="neew.php"><button type="button" class="btn btn-warning">Select</button></a>
-                    </div>
-                </div>
-
-
-                <div class="row" id="mumbai">
+                    </div>-->
                     <div class="col">
-                        <img src="..\images\hyatpune.jfif" width="240" height="182" border="2">
-                    </div>
-                    <div class="col">
-                        <h3><b>Inspira Mumbai</b></h3>
-                        Apollo Bandar, Colaba,
-                        Mumbai, Maharashtra 400001
-                        India
-                        <div class="b-text_copy-2 b-text_weight-bold">0 miles/0 km</div>
-                    </div>
-                    <div class="col" style="font-size: 25px;">
-                        <b>&#8377 5,000</b>
-                        <h6>Avg/Night(INR)</h6>
-                        <a href="neew.php"><button type="button" class="btn btn-warning">Select</button></a>
-                    </div>
-                </div>
-
-
-
-                <div class="row" id="nagpur">
-                    <div class="col">
-                        <img src="..\images\hytre.jfif" width="240" height="182" border="2">
-                    </div>
-                    <div class="col">
-                        <h3><b>Inspira Regency</b></h3>
-                        Weikfield IT Park, Nagar Road
-                        Nagpur, Maharashtra 411006
-                        India
-                        <div class="b-text_copy-2 b-text_weight-bold">0.6 miles/1.0 km</div>
-
-                    </div>
-                    <div class="col" style="font-size: 25px;">
                         <b>&#8377 5,000</b>
                         <h6>Avg/Night(INR)</h6>
                         <a href="neew.php"><button type="button" class="btn btn-warning">Select</button></a>
@@ -148,7 +128,10 @@ $conn->close();
         </div>
     </div>
 </div>
-
+</div>
+<?php
+$conn->close();
+?>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

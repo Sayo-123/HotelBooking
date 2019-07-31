@@ -17,6 +17,7 @@ session_start();
 </head>
 
 <body>
+    <!--Navigation Bar of the homepage-->
     <nav class="navbar navbar-expand-md   navbar-dark bg-dark  sticky-top ">
         <button class="navbar-toggler" data-toggle="collapse" data-target="collapse-target">
             <span class="navbar-toggler-icon"></span>
@@ -32,20 +33,20 @@ session_start();
                         <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                        <a href="fourthpage.html" class="dropdown-item">Meet Our Team</a>
+                        <a href="meet the team.html" class="dropdown-item">Meet Our Team</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item">Offers</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="thirdpage.html">Gallery</a>
+                    <a class="nav-link" href="Images.html">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="fifthpage.html">Find Us Here</a>
+                    <a class="nav-link" href="MAP.html">Find Us Here</a>
                 </li>
 
                 <li>
-                    <a class="nav-link" href="secondpage.html">About Us</a>
+                    <a class="nav-link" href="Aboutus.html">About Us</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -55,7 +56,7 @@ session_start();
             </ul>
         </div>
     </nav>
-
+    <!--Image slider  Section Starts here-->
     <div id="slider">
         <figure>
             <img src="..\images\luxroom.jpg">
@@ -65,7 +66,7 @@ session_start();
             <img src="..\images\gpm.jpg">
         </figure>
     </div>
-
+    <!--Availability Section Starts here-->
     <div class="avail">
         <fieldset>
             <legend>Availability Check</legend>
@@ -104,23 +105,36 @@ session_start();
                     <td><label for="email" style="margin: 4px;">E-mail</label></td>
                     <td><input type="email" name="email" id="email" style="margin: 4px;"></td>
                     <tr>
-
-                        <td><label for="location" id="location">Location</label></td>
+                        <td>Locations</td>
                         <td>
-                            <select name="loc">
-                                <option value="1" id="pune"> Pune &nbsp;
-                                <option value="2" id="mumbai"> Mumbai &nbsp;
-                                <option value="3" id="nagpur"> Nagpur &nbsp;
-                            </select></td>
+                            <select name='loc'>
+                                <?php
+                                $host = "localhost";
+                                $user = "root";
+                                $password = "";
+                                $db = "hotelbooking";
+                                $conn = new mysqli($host, $user, $password, $db);
+
+                                $result = $conn->query("SELECT * FROM `locations1`");
+                                while ($row = $result->fetch_assoc()) {
+                                    ?>
+                                    <option value="<?php echo $row['LocID']; ?>">
+                                        <?php echo $row['Loc_des']; ?>
+                                    </option>
+                                <?php
+                                }
+                                ?>
+
+                            </select>
+                        </td>
                     </tr>
+
                 </table>
                 <center> <button type="submit" class="btn btn-primary">Submit</button> </center>
             </form>
 
         </fieldset>
     </div>
-
-
 </body>
 
 </html>

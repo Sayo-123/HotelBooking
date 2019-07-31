@@ -4,6 +4,7 @@ $id  = $_SESSION['Branch_id']
 ?>
 <!DOCTYPE html>
 <html>
+<!--All contents are dynamically fetch from backend--->
 
 <head>
     <?php
@@ -89,6 +90,7 @@ $id  = $_SESSION['Branch_id']
                 </div>
             </div>
         </form>
+
         <div class="row">
             <div class="col">
                 <div class="container">
@@ -114,7 +116,7 @@ $id  = $_SESSION['Branch_id']
             </div>
         </div>
 
-        <!----------------------------------------------------------------->
+        <!------------------------here frame is used for different prices of  different rooms----------------------------------------->
         <div class="row">
             <div class="col">
                 <?php $sql = "SELECT * FROM `room`;";

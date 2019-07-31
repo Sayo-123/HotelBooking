@@ -15,7 +15,6 @@ if (isset($_POST['user'])) {
     $sql = "select * from login where username='$uname' AND password=DES_ENCRYPT('$pass');";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-        echo "You Have Successfully LoggedIn!";
         while ($row = $result->fetch_assoc()) {
             $_SESSION["aid"] = $row["ID"]; //set session var
 
@@ -34,6 +33,7 @@ $aid = $_SESSION["aid"];
 
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="..\CSS\custom.css">
 </head>
 
@@ -47,8 +47,7 @@ $aid = $_SESSION["aid"];
                 if ($result->num_rows > 0) {
 
                     while ($row = $result->fetch_assoc()) {
-                        echo "<p style='color:black;'>";
-                        echo "Welcome to location:";
+                        echo "<u><p style='font-size:40px; color:black;'>Welcome to location : ";
                         echo $row['Loc_des'];
                         echo  "</p>";
                     }
@@ -60,13 +59,22 @@ $aid = $_SESSION["aid"];
                     <div class="row">
                         <div class="col">
                             <li class="active">
-                                <a href="Loc_pune.php" data-toggle="pill"></i>Manage Locations</a></li>
+                                <a href="Loc_pune.php" data-toggle="pill">
+                                    <i class="fa fa-hotel" style="font-size:36px"></i>
+                                    <h4>Manage Locations</h4>
+                                </a></li>
                         </div>
                         <div class="col">
-                            <li><a href="Customers.php" data-toggle="pill">Manage Customers</a></li>
+                            <li><a href="Customers.php" data-toggle="pill">
+                                    <i class="fa fa-users" style="font-size:36px"></i>
+                                    <h4>Manage Customers</h4>
+                                </a></li>
                         </div>
                         <div class="col">
-                            <li><a href="#tab-c" data-toggle="pill">Settings</a></li>
+                            <li><a href="#tab-c" data-toggle="pill">
+                                    <i class="fa fa-gear" style="font-size:36px;"></i>
+                                    <h4>Settings</h4>
+                                </a></li>
                         </div>
                     </div>
                 </ul>

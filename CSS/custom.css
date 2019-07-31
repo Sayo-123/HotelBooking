@@ -7,9 +7,12 @@ body {
 }
 
 .tabs {
-    background-color: #f5f5f5;
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+.x {
+    block-size: 150px;
 }
 
 .tabs a {
@@ -22,11 +25,11 @@ body {
 }
 
 .tabs li {
-    background-color: #333;
+    background-color: gray;
     margin-top: 1px;
     text-align: center;
-    height: 110px;
-    width: 110px;
+    height: 190px;
+    width: 200px;
     padding-top: 45px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
@@ -34,28 +37,27 @@ body {
     margin-top: 100px;
 }
 
+
+/* admin side tabs*/
+
 .tabs li.active {
-    background-color: #ff8b38;
+    background-color: #1034A6;
 }
 
-#login {
-    background: #eee;
+.login {
+    background-image: url('../images/Register.jpg');
 }
+
+
+/*Login form frm id*/
 
 #frm {
-    border: solid gray 1px;
+    border: solid white 2px;
     width: 20%;
     border-radius: 5px;
     margin: 100px auto;
-    background: white;
     padding: 50px;
-}
-
-#btn {
-    color: #fff;
-    background: #337ab7;
-    padding: 5px;
-    margin-left: 69%;
+    color: white;
 }
 
 #r1 {
@@ -72,6 +74,9 @@ body {
     text-align: center;
 }
 
+
+/*Billing.php division  id*/
+
 #bill,
 #bill td {
     margin: 10px;
@@ -79,7 +84,7 @@ body {
     border: 2px solid black;
     text-align: center;
     margin-left: 250px;
-    background-color: rgb(160, 207, 236);
+    background-color: rgb(199, 160, 236);
 }
 
 .div2 {
@@ -101,6 +106,9 @@ body {
 #cnt {
     width: 184px;
 }
+
+
+/*Reservation form division*/
 
 .reser {
     padding: 50px;
@@ -142,6 +150,9 @@ details {
     display: block;
 }
 
+
+/*for availability check division*/
+
 .avail {
     border-radius: 15px 50px;
     position: absolute;
@@ -171,12 +182,16 @@ td {
     box-sizing: border-box;
 }
 
+
+/*Location pune conatiner tab*/
+
 .container .tab-content {
-    font-size: 14px;
-    color: #00779c;
-    line-height: 30px;
+    font-size: 17px;
+    color: blue;
+    line-height: 40px;
     background: #e7ecea;
-    padding: 20px 85px;
+    padding: 15px 70px;
+    height: 700px;
 }
 
 .column {
@@ -199,6 +214,9 @@ td {
     flex: 33.33%;
     padding: 5px;
 }
+
+
+/* homepage slider applicable for 5 images only*/
 
 @keyframes slider {
     0% {
@@ -250,6 +268,9 @@ td {
     animation: 20s slider infinite;
 }
 
+
+/*slider section ends*/
+
 img {
     border-radius: 9px;
 }
@@ -267,6 +288,9 @@ fieldset {
     padding: 0;
     font-family: "montserrat";
 }
+
+
+/* meet our team*/
 
 .team-section {
     background: #f1f1f1;
@@ -338,6 +362,9 @@ fieldset {
     color: #333;
     line-height: 30px;
 }
+
+
+/*team section ends*/
 
 @media screen and (max-width:600px) {
     .pe {
